@@ -7,11 +7,12 @@
 
 
 
-<ion-content padding style="background-image:url('assets/imgs/background.png');  background-position: center; background-repeat: no-repeat; background-size: auto;">
+<ion-content padding style="background-image:url('assets/imgs/background.png');  background-position: center; background-repeat: no-repeat; background-size: cover;">
     <img  width="80" height="80" src="assets/imgs/jobn.png" class="background_default">
     <div class="spacing_the_button">
-        <button ion-button color="greenpurpal" round   class="page_btn  login_btn" onclick=effect_on_button()>Login</button>
+        <button ion-button color="greenpurpal" round   class="page_btn  login_btn"
+         (click)="goToLoginHomePage()">Login</button>
         <span class="text_block">or</span>
-        <button ion-button color="purpal" round  class="page_btn  signup_btn ">Signup</button>
+        <button ion-button color="purpal" round  class="page_btn  signup_btn " (click)="goToSignUpPage()">Signup</button>
     </div>
 </ion-content>

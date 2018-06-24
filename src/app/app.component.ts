@@ -14,7 +14,7 @@ import { EmployerHirePage } from '../pages/employer-hire/employer-hire';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = LoginHomePage;
+  rootPage:any = VerificationPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
