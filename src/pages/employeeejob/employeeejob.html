@@ -10,42 +10,42 @@
     <ion-list class="default_height">
         <ion-item class="input_section">
             <ion-label>Name</ion-label>
-            <ion-input type="text" name="employee_name"></ion-input>
+            <ion-input type="text" [(ngModel)]="employee_name"></ion-input>
         </ion-item>
 
         <ion-item class="input_section">
             <ion-label>Email</ion-label>
-            <ion-input type="text" name="employee_email"></ion-input>
+            <ion-input type="email" [(ngModel)]="employee_email"></ion-input>
         </ion-item>
 
         <ion-item class="input_section">
             <ion-label>Mobile</ion-label>
-            <ion-input type="text" name="employee_tel"></ion-input>
+            <ion-input type="number"[(ngModel)]="employee_tel"></ion-input>
         </ion-item>
 
         <ion-item class="input_section">
             <ion-label>City</ion-label>
-            <ion-input type="text" name="employee_city"></ion-input>
+            <ion-input type="text" [(ngModel)]="employee_city"></ion-input>
         </ion-item>
 
         <ion-item class="input_section">
             <ion-label>State</ion-label>
-            <ion-input type="text" name="employee_state"></ion-input>
+            <ion-input type="text" [(ngModel)]="employee_state"></ion-input>
         </ion-item>
 
         <ion-item class="input_section">
             <ion-label>Country</ion-label>
-            <ion-input type="text" name="employee_country"></ion-input>
+            <ion-input type="text" [(ngModel)]="employee_country"></ion-input>
         </ion-item>
 
         <ion-item class="input_section">
             <ion-label>Address L1</ion-label>
-            <ion-input type="text" name="employee_first"></ion-input>
+            <ion-input type="text" [(ngModel)]="employee_first"></ion-input>
         </ion-item>
 
         <ion-item class="input_section">
             <ion-label>Address L2</ion-label>
-            <ion-input type="text" name="employee_second"></ion-input>
+            <ion-input type="text" [(ngModel)]="employee_second"></ion-input>
         </ion-item>
     </ion-list>
     <div padding>

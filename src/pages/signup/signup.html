@@ -11,7 +11,7 @@
         <ion-list class="default_height">
             <ion-item class="input_section">
                 <ion-label>Email</ion-label>
-                <ion-input type="email" name="user_email"></ion-input>
+                <ion-input type="email" [(ngModel)]="user_email"></ion-input>
             </ion-item>
         </ion-list>
         <ion-list radio-group [(ngModel)]="userRole">
