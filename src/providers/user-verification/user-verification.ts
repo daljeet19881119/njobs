@@ -11,24 +11,32 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class UserVerificationProvider {
-  user_email:string;
-
-  constructor(public http: Http) {
+ 
+  constructor(private http: Http) {
     console.log('Hello UserVerificationProvider Provider');
   }
 
-  userEmailVerification(user_email:string){
+  userEmailVerification(user_email:string,userRole:string){
     let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
+    headers.append('Accept', 'application/json');
 
-    let option = new RequestOptions({headers:headers});
+    let options = new RequestOptions({headers:headers});
+
     // data to be send 
     let data = JSON.stringify({ 
-          username: user_email 
+        useremail: user_email,
+        userRole:userRole
     }); 
 
-    return this.http.post('http://localhost/ionic/postResponse.php',data,option).map(res => res.json());
+    return this.http.post('http://localhost/newCodeIgniter/api/rest/', data, options).map(res => res.json());
+     //return this.http.get('http://localhost/newCodeIgniter/api/rest?username='+user_email).map(res => res.json());
   }
+
+
   
 
+
+  
+  
+  
 }

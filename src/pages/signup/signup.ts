@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EmployerHirePage } from '../employer-hire/employer-hire';
 import { EmployeeejobPage } from '../employeeejob/employeeejob';
+import 'rxjs/add/operator/map';
+import { Http, Http } from '@angular/http';
+import { UserVerificationProvider } from '../../providers/user-verification/user-verification';
+import { VerificationPage } from '../verification/verification';
 
 /**
  * Generated class for the SignupPage page.
@@ -19,8 +23,8 @@ export class SignupPage {
 
   //define the variable
   userRole :string;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  user_email:string;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private userservice:UserVerificationProvider) {
   }
   
   // function for the select the radio button
@@ -28,12 +32,21 @@ export class SignupPage {
     //console.log('userrole: '+this.userRole);
     
     if(this.userRole == 'employer'){
-      this.navCtrl.push(EmployerHirePage);
+      this.navCtrl.push(VerificationPage);
     }
     if(this.userRole == 'employee'){
-      this.navCtrl.push(EmployeeejobPage);
+      this.navCtrl.push(VerificationPage);
     }
+     // data will be send here
+     this.userservice.userEmailVerification(this.user_email, this.userRole).subscribe(data=>{
+      console.log(data);
+    },err=>{
+      console.log(err);
+    });
   }
+
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPage');
