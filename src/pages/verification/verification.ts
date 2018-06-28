@@ -21,14 +21,14 @@ export class VerificationPage {
   }
 
   // verifaction the email and insert the data
-  verificationEmail(){
-    // data will be send here
-    this.userservice.userEmailVerification(this.user_email).subscribe(data=>{
-      console.log(data);
-    },err=>{
-      console.log(err);
-    });
-  }
+  // verificationEmail(){
+  //   // data will be send here
+  //   this.userservice.userEmailVerification(this.user_email).subscribe(data=>{
+  //     console.log(data);
+  //   },err=>{
+  //     console.log(err);
+  //   });
+  // }
 
 
   ionViewDidLoad() {

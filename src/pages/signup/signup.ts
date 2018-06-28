@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { EmployerHirePage } from '../employer-hire/employer-hire';
-import { EmployeeejobPage } from '../employeeejob/employeeejob';
 import 'rxjs/add/operator/map';
-import { Http, Http } from '@angular/http';
+
 import { UserVerificationProvider } from '../../providers/user-verification/user-verification';
 import { VerificationPage } from '../verification/verification';
 
@@ -27,9 +25,9 @@ export class SignupPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private userservice:UserVerificationProvider) {
   }
   
-  // function for the select the radio button
+  //function for the select the radio button
   goToNextPage(){
-    //console.log('userrole: '+this.userRole);
+    console.log('userrole: '+this.userRole);
     
     if(this.userRole == 'employer'){
       this.navCtrl.push(VerificationPage);
@@ -37,7 +35,7 @@ export class SignupPage {
     if(this.userRole == 'employee'){
       this.navCtrl.push(VerificationPage);
     }
-     // data will be send here
+      // data will be send here
      this.userservice.userEmailVerification(this.user_email, this.userRole).subscribe(data=>{
       console.log(data);
     },err=>{
