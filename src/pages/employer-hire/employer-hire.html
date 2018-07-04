@@ -4,7 +4,7 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-content padding style="background-image:url('assets/imgs/background.png');  background-position: center; background-repeat: no-repeat; background-size: auto;">
+<ion-content padding style="background-image:url('assets/imgs/background.png');  background-position: center; background-repeat: no-repeat; background-size: cover;">
   <img  width="80" height="80" src="assets/imgs/jobn.png" class="background_default">
   
     <ion-list class="default_height">
@@ -45,7 +45,7 @@
 
         <ion-item class="input_section">
             <ion-label>Company Address</ion-label>
-            <ion-input type="text" [(ngModel)]="employer_adress"></ion-input>
+            <ion-input type="text" [(ngModel)]="employer_address"></ion-input>
         </ion-item>
 
         <ion-item class="input_section">
@@ -55,7 +55,7 @@
 
     </ion-list>
     <div padding>
-        <button ion-button color="purpal" round  class="page_btn  signup_btn ">Signup</button>
+        <button ion-button color="purpal" round  class="page_btn  signup_btn" (click)="employerHiresignUp()" >Signup</button>
     </div>
 </ion-content> 
 

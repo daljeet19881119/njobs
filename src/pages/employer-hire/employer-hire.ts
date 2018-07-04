@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import 'rxjs/add/operator/map';
+import { UserVerificationProvider } from '../../providers/user-verification/user-verification';
 
 /**
  * Generated class for the EmployerHirePage page.
@@ -14,28 +16,28 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'employer-hire.html',
 })
 export class EmployerHirePage {
-  employer_name: string;
-  employer_email:string;
-  employer_tel: number;
-  employer_city: string;
-  employer_state:string;
-  employer_country:string;
-  employer_company: string;
-  employer_adress:  string;
-  employer_website: string;
+  employer_name   : string;
+  employer_email  : any;
+  employer_tel    : number;
+  employer_city   : string;
+  employer_state  : string;
+  employer_country  : string;
+  employer_company  : string;
+  employer_address   : string;
+  employer_website  : string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-  
-  //insert the data here
-  // insertEmployer(){
-  //   var headers: new Headers();
+  constructor(public navCtrl: NavController, public navParams: NavParams, private employerService: UserVerificationProvider) {
+}
 
-  //   let postParams = { data:{
-
-  //   }};
-
-  // }
+// function for using to careate the employer profile
+employerHiresignUp(){
+    
+  this.employerService.employerHireJob(this.employer_name, this.employer_email,this.employer_tel,this.employer_city,this.employer_state, this.employer_country,this.employer_company, this.employer_address, this.employer_website).subscribe(data=>{
+    console.log(data);
+  },err=>{
+    console.log(err);
+  });
+}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EmployerHirePage');
