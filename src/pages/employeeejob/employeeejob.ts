@@ -32,9 +32,10 @@ export class EmployeeejobPage {
   // onclick signup the candidatte form
   candidateSignUp(){
 
-    // validation to check theinput field is empty or not 
-    if(this.employee_name === ""  && this.employee_email === ""){
-        alert("This is required");
+   // validation to check theinput field is empty or not 
+    if(this.employee_name != '' &&  this.employee_email != '' && this.employee_tel!= '' && this.employee_city != ''  && this.employee_state != '' && this.employee_country != '' && this.employee_first != '' && this.employee_second != '' ){
+      alert("This is required field");
+        return false;
      }else{
     
         // data will be send here by json
@@ -43,7 +44,7 @@ export class EmployeeejobPage {
         },err=>{
           console.log(err);
         });
-     } //end here thevalidation 
+    } //end here thevalidation 
 
   }
 
