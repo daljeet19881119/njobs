@@ -15,6 +15,7 @@ import { EmployerHirePage } from '../pages/employer-hire/employer-hire';
 import { UserVerificationProvider } from '../providers/user-verification/user-verification';
 import { HttpModule } from '@angular/http';
 
+
 @NgModule({
   declarations: [
     MyApp,
@@ -25,6 +26,7 @@ import { HttpModule } from '@angular/http';
     VerificationPage,
     EmployeeejobPage,
     EmployerHirePage
+    
   ],
   imports: [
     BrowserModule,
@@ -41,6 +43,7 @@ import { HttpModule } from '@angular/http';
     VerificationPage,
     EmployeeejobPage,
     EmployerHirePage
+    
   ],
   providers: [
     StatusBar,
