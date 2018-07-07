@@ -74,13 +74,26 @@ export class UserVerificationProvider {
       employer_website  : employer_website
     });
 
-    
 
   return this.http.post('http://localhost/newCodeIgniter/employer/', data, options).map(res => res.json());
   }
 
 
+// on click signup login to the dashboard
+signUpDashboard(email:any, password:any){
+  let headers = new Headers();
+  headers.append('Accept','application/json');
+  let options = new RequestOptions({headers:headers});
 
+  // here data convert into json 
+  let data = JSON.stringify({
+      email :email,
+      password:password
+  });
+
+  // post the data here by jon get form the restapi 
+  return this.http.post('http://localhost/newCodeIgniter/dashboard/', data, options).map(res => res.json());
+}
   
 
 

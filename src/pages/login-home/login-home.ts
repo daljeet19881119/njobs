@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { SignupPage } from '../signup/signup';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+
+import 'rxjs/add/operator/map';
+import { UserVerificationProvider } from '../../providers/user-verification/user-verification';
+import { DashboardPage } from '../dashboard/dashboard';
 
 
 /**
@@ -17,26 +20,42 @@ import { SignupPage } from '../signup/signup';
 })
 export class LoginHomePage {
 
-  // create the variable 
+  // this variab;e get  the variable input field value 
   email:any;
   password:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public DashboardService: UserVerificationProvider, public alertCtrl: AlertController) {
   }
   
   // function for the redirection the code
   goTologinSuccess(){
     //console.log('email: '+this.email);
     //console.log('password: '+this.password);
-    if(this.email == 'aman@gmail.com' && this.password == '123456'){
+    if(this.email == null || this.password == null ){
+      this.validationAlert();
 
-    
-    this.navCtrl.push(SignupPage);
     }else{
-      alert('login faild plz check it');
+     this.DashboardService.signUpDashboard(this.email,this.password).subscribe(data=>{
+      console.log(data);
+        },err=>{
+          console.log(err);
+        });
+      this.navCtrl.push(DashboardPage);
     }
+}
 
-  }
+// onclick creating the validation 
+validationAlert(){
+  const alert = this.alertCtrl.create({
+    
+
+  })
+  alert.present();
+}
+
+
+  //this.navCtrl.push(SignupPage);
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginHomePage');

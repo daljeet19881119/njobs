@@ -48,18 +48,6 @@
             <ion-input type="text" [(ngModel)]="employee_second" required></ion-input>
         </ion-item>
 
-        <ion-item>
-            <ion-label>Drop down</ion-label>
-           
-            <ion-select [(ngModel)]="dataaction"  (ionChange)="itemSelected(dataaction);">
-                    
-                 <option *ngFor=" let dataaction of i" >{{i.events.event_name}}</option>
-             
-             
-            </ion-select>
-          </ion-item>
-
-
 
     </ion-list>
     <div padding>
